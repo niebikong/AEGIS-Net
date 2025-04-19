@@ -4,7 +4,6 @@
 
 The source code and models for our paper **AEGIS-Net**.
 
-G:\Code_repo\AEGIS-Net\README.assets\image-20250411212848537.png
 
 ## Framework
 
