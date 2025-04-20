@@ -7,7 +7,7 @@ The source code and models for our paper **AEGIS-Net**.
 
 ## Framework
 
-![image-20250411212848537](README.assets/1.png)
+![image-20250411212848537](README.assets/2.png)
 
 
 ## Setups
