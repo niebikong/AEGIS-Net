@@ -10,7 +10,6 @@ The source code and models for our paper **AEGIS-Net**.
 ![image-20250411212848537](README.assets/1.png)
 
 
-
 ## Setups
 
 All code was developed and tested on a single machine equiped with a Tesla V100 32GB GPU. The environment is as bellow:
