@@ -31,7 +31,7 @@ The code is currently tested only on GPU.
 
   Preprocessing of the dataset is done at `Data_Proprecessing`.
 
-  Created a folder `AEGIS-Net/dataset` and download `Malicious_TLS`/`CICIDS2017`/`CICIDS2017` into this folder.
+  Created a folder `AEGIS-Net/dataset` and download `Malicious_TLS`/`CICIDS2017`/`CICIDS2017`  dataset into this folder.
 
   You can download these datasets for pan.baidu.com. 
 
