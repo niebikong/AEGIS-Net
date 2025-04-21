@@ -1,3 +1,4 @@
+# different noise_percent
 for NOISE_PERCENT in $(seq 0.1 0.1 0.5)
 do
     echo "Running with noise_percent = $NOISE_PERCENT"
