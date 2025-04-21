@@ -15,7 +15,7 @@ do
 
     echo "Setting classifier_train_epochs = $CLASSIFIER_TRAIN_EPOCHS"
 
-    if /home/ju/Desktop/NetMamba/.venv/bin/python /home/ju/Desktop/NetMamba/PNP/AEGIS-Net/training.py \
+    if python /home/ju/Desktop/NetMamba/PNP/AEGIS-Net/training.py \
         --noise_percent $NOISE_PERCENT \
         --classifier_train_epochs $CLASSIFIER_TRAIN_EPOCHS; then
         echo "Finished running with noise_percent = $NOISE_PERCENT"
