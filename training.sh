@@ -5,9 +5,9 @@ do
     NOISE_INT=$(echo "($NOISE_PERCENT * 10)/1" | bc)  # 0.3 → 3, 0.6 → 6
 
     if [ $NOISE_INT -le 4 ]; then          # <= 0.4
-        CLASSIFIER_TRAIN_EPOCHS=20
+        CLASSIFIER_TRAIN_EPOCHS=50
     elif [ $NOISE_INT -le 6 ]; then        # <= 0.6
-        CLASSIFIER_TRAIN_EPOCHS=20
+        CLASSIFIER_TRAIN_EPOCHS=50
     else                                   # > 0.6
         CLASSIFIER_TRAIN_EPOCHS=50
     fi
