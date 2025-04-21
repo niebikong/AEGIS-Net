@@ -12,7 +12,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 IN_DATASET = 'malicious_TLS'   # choices=['malicious_TLS', 'IDS_2017', 'IDS_2018_friday']
 OOD_DATASETS = ['Darknet2020'] 
-CACHE_DIR = "AEGIS-Net/cache"  
+CACHE_DIR = "cache"  
 
 def load_features(dataset_name, split='train'):
     cache_path = os.path.join(CACHE_DIR, f"{dataset_name}_{split}_features.npy")

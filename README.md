@@ -5,10 +5,10 @@
 The source code and models for our paper **AEGIS-Net**.
 
 
+
 ## Framework
 
-![image-20250411212848537](README.assets/1.png)
-
+![image-20250419190335237](README.assets/1.png)
 
 ## Setups
 
@@ -33,9 +33,19 @@ The code is currently tested only on GPU.
 
   Created a folder `AEGIS-Net/dataset` and download `Malicious_TLS`/`CICIDS2017`/`CICIDS2017` into this folder.
 
-- Source code
+  You can download these datasets for pan.baidu.com. 
 
-​		If you 
+  ```html
+  AEGIS-Net dataset
+  Link: https://pan.baidu.com/s/14dWEJquGwDoPuyt5zej4jw
+  The extraction code: hrv7
+  
+  CIC_IDS_2017_Formated_DATA.csv is the CICIDS2017 dataset.
+  processed_friday_dataset.csv is the CICIDS2018 friday dataset(2018.3.2 and 2018.2.16).
+  cleaned_data is the CICDarknet2020 dataset.
+  ```
+
+- Source code
 
 ```python
 # Execute the following three files in sequence

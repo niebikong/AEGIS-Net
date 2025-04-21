@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 
 def load_malicious_TLS():
-    output_path = r"AEGIS-Net/dataset/label_encodered_malicious_TLS-1.csv"
+    output_path = r"dataset/label_encodered_malicious_TLS-1.csv"
     data = pd.read_csv(output_path)
     label_encoder = LabelEncoder()
     for col in data.columns:
@@ -42,7 +42,7 @@ def load_IDS_2017():
     14        652
     Name: Label, dtype: int64
     """
-    output_path = r'AEGIS-Net/dataset/CIC_IDS_2017_Formated_DATA.csv'
+    output_path = r'dataset/CIC_IDS_2017_Formated_DATA.csv'
     data = pd.read_csv(output_path)
     label_encoder = LabelEncoder()
 
@@ -90,7 +90,7 @@ def load_IDS_2017():
 
 
 def load_IDS_2018_friday():
-    output_path = r'AEGIS-Net/dataset/processed_friday_dataset.csv'
+    output_path = r'dataset/processed_friday_dataset.csv'
     data = pd.read_csv(output_path)
     label_encoder = LabelEncoder()
 
@@ -135,7 +135,7 @@ def load_IDS_2018_friday():
     return X_train, y_train, X_test, y_test
 
 def load_Darknet2020():
-    output_path = r'/home/ju/Desktop/NetMamba/PNP/SMP/dataset/cleaned_data.csv'
+    output_path = r'dataset/cleaned_data.csv'
     data = pd.read_csv(output_path)
     label_encoder = LabelEncoder()
     for col in data.columns:

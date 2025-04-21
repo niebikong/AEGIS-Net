@@ -78,7 +78,7 @@ if __name__ == "__main__":
     parser.add_argument('--classifier_train_batch_size', default=128, type=int,
                       help='batch_size')
     parser.add_argument('--classifier_model_path', 
-                      default=r'AEGIS-Net/cache/trained_model/classifier_%s_r%s_%s.model',
+                      default=r'cache/trained_model/classifier_%s_r%s_%s.model',
                       help='model save path')
     parser.add_argument('--num_classes', default=24, type=int,
                       help='Number of classes')
@@ -179,7 +179,7 @@ if __name__ == "__main__":
     )
 
     # save result
-    result_path = 'AEGIS-Net/cache/output.txt'
+    result_path = 'cache/output.txt'
     with open(result_path, 'a', encoding="utf-8") as f:
         f.write(f"\n{' Experimental records ':=^60}\n")
         f.write(f"noise_percent: {args.noise_percent}\n")

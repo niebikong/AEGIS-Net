@@ -126,7 +126,7 @@ if __name__ == "__main__":
     parser.add_argument('--classifier_train_batch_size', default=128, type=int,
                       help='batch_size')
     parser.add_argument('--classifier_model_path', 
-                      default=r'AEGIS-Net/cache/trained_model/classifier_%s_r%s_%s.model',
+                      default=r'cache/trained_model/classifier_%s_r%s_%s.model',
                       help='model save path')
     parser.add_argument('--num_classes', default=24, type=int,
                       help='Number of classes')
@@ -191,7 +191,7 @@ if __name__ == "__main__":
     train_loader = create_dataloader(x_train, y_train, args.classifier_train_batch_size)
     test_loader = create_dataloader(x_test, y_test, args.classifier_train_batch_size)
 
-    cache_base = r"AEGIS-Net/cache"
+    cache_base = r"cache"
     FORCE_REGEN = False  
     
     # Training set/testing set feature processing
@@ -230,8 +230,8 @@ if __name__ == "__main__":
         force_run=FORCE_REGEN
     )
     
-    # 结果验证
+    # result
     print(f'\n{" Feature processing complete ":=^60}')
     print(f'ood_features.shape: {ood_features.shape}')
     print(f'ood_scores.shape: {ood_scores.shape}')
-    print(f'total time-consuming: {time.time()-begin:.2f}秒')
+    print(f'total time-consuming: {time.time()-begin:.2f} seconds')
