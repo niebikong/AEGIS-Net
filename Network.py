@@ -116,7 +116,7 @@ class DeepResNet(nn.Module):
 
 
     def fit(self, args, x, y, y_true=None, lr=0.001, num_epochs=50, batch_size=256,
-            start_epoch=10, alpha=0.5, beta=0.8, temperature=0.07, patience=10):  # alpha=0.5, beta=0.8, temperature=0.07
+            start_epoch=10, alpha=0.1, beta=0.5, temperature=0.07, patience=10):
         x = torch.tensor(x, dtype=torch.float32).unsqueeze(1)
         y = torch.tensor(y, dtype=torch.long)
         indices = torch.arange(len(x))
