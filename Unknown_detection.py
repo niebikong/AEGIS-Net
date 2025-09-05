@@ -57,7 +57,7 @@ if __name__ == "__main__":
     # Loading known dataset features
     ftrain, _, _ = load_features(IN_DATASET, 'train')
     ftest, _, _ = load_features(IN_DATASET, 'val')
-    
+
     # Loading unknown dataset features
     ood_features = {}
     for ood_name in OOD_DATASETS:
@@ -73,21 +73,25 @@ if __name__ == "__main__":
     # Building the FAISS Index
     print("\n Building the FAISS Index...")
     ann_index = build_faiss_index(ftrain)
-    
+
     # Evaluating the detection effect of different K values
     K_LIST = [50]  # Expandable to multiple K-value comparisons
     for K in K_LIST:
         start_time = time.time()
-        
+
+        # Calculate scores for training set to determine threshold
+        train_scores = calculate_ood_scores(ann_index, ftrain, K)
+        # Calculate scores for test sets
         in_scores = calculate_ood_scores(ann_index, ftest, K)
-        
+
         all_results = []
         for ood_name, ood_feat in food.items():
             ood_scores = calculate_ood_scores(ann_index, ood_feat, K)
-            
-            results = metrics.cal_metric(in_scores, ood_scores)
+
+            # Pass train_scores to determine threshold based on training data
+            results = metrics.cal_metric(in_scores, ood_scores, train_scores=train_scores)
             all_results.append(results)
-            
+
             print(f"\n{OOD_DATASETS[0]} detection result:")
 
         metrics.print_all_results(all_results, OOD_DATASETS, f'ANN-IVFFlat k={K}')
