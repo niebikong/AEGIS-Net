@@ -3,8 +3,8 @@ from __future__ import print_function
 import numpy as np
 
 
-def cal_metric(known, novel, method=None):
-    tp, fp, fpr_at_tpr95 = get_curve(known, novel, method)
+def cal_metric(known, novel, method=None, train_scores=None):
+    tp, fp, fpr_at_tpr95 = get_curve(known, novel, method, train_scores)
     results = dict()
     mtypes = ['FPR', 'AUROC', 'DTERR', 'AUIN', 'AUOUT']
 
@@ -42,7 +42,7 @@ def cal_metric(known, novel, method=None):
 
     return results
 
-def get_curve(known, novel, method=None):
+def get_curve(known, novel, method=None, train_scores=None):
     tp, fp = dict(), dict()
     fpr_at_tpr95 = dict()
 
@@ -61,7 +61,16 @@ def get_curve(known, novel, method=None):
     if method == 'row':
         threshold = -0.5
     else:
-        threshold = known[round(0.05 * num_k)]
+        # Use training scores to determine threshold if provided
+        if train_scores is not None:
+            train_scores_sorted = np.sort(train_scores)
+            # Set threshold to ensure 95% of training data (ID data) is correctly classified
+            threshold = train_scores_sorted[round(0.05 * len(train_scores_sorted))]
+            print(f"Threshold determined from training data: {threshold:.6f}")
+        else:
+            # Fallback to original method using test data
+            threshold = known[round(0.05 * num_k)]
+            print(f"Threshold determined from test data: {threshold:.6f}")
 
     tp = -np.ones([num_k+num_n+1], dtype=int)
     fp = -np.ones([num_k+num_n+1], dtype=int)
