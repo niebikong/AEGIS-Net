@@ -228,6 +228,7 @@ class DeepResNet(nn.Module):
         return y_pred, y_prob, features
 
 if __name__ == "__main__":
+    # test
     classifier = DeepResNet(input_size=117, num_classes=10)
     input_image = torch.randn(100, 1, 117)  
     
