@@ -2,8 +2,9 @@
 
 ## Introduction
 
-The source code and models for our paper **AEGIS-Net**.
+The source code for our paper **When Unknown Threat Meets Label Noise: A Self-Correcting Framework**.
 
+IEEE TDSC 2025 (https://ieeexplore.ieee.org/document/11173980)
 
 
 ## Framework
@@ -63,3 +64,14 @@ The code is currently tested only on GPU.
 sh training.sh
 ```
 
+## Citation
+
+```
+@article{meng2025unknown,
+  title={When Unknown Threat Meets Label Noise: A Self-Correcting Framework},
+  author={Meng, Qianwei and Yuan, Qingjun and Tao, Jing and Wang, Pinghui and Lu, Siqi and Li, Guangsong and Wang, Yongjuan and Guan, Xiaohong},
+  journal={IEEE Transactions on Dependable and Secure Computing},
+  year={2025},
+  publisher={IEEE}
+}
+```
